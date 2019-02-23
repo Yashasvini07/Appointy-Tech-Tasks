@@ -1,0 +1,60 @@
+#include <iostream>
+#include <algorithm>
+
+using namespace std;
+char input_User(){
+    char user;
+    cout<<"Rock Paper Scissor!\n";
+    cout<<"Select you choice:\n";
+    cout<<"1. Rock.\n 2.Paper.\n 3.Scissor\n";
+    cout<<"Enter selection:\n";
+    cin>>user;
+    return user;
+}
+
+void findWinner(char user, char comp){
+    
+    switch(user){
+        case 'R':
+        case 'r':{
+            if(comp=='1')
+                cout<<"You Lost!";
+            else if(comp=='2')
+                cout<<"You won!";
+            else
+                cout<<"Match draw!\n";
+            return;
+        }
+        case 'P':
+        case 'p':{
+            if(comp=='2')
+                cout<<"You Lost!\n";
+            else if(comp=='0')
+                cout<<"You won!\n";
+            else
+                cout<<"Match draw!\n";
+            return;
+        }
+        case 'S':
+        case 's':{
+            if(comp=='0')
+                cout<<"You Lost!\n";
+            else if(comp=='1')
+                cout<<"You won!";
+            else
+                cout<<"Match draw!\n";
+            return;
+        }
+        default:
+            cout<<"invalid Input";
+    }
+}
+int main() {
+    char user = input_User();
+    //const char arrayNum[3] = {'0', '1', '2', '3'};
+    int comp = rand() % 4;
+    //char comp = std::random_shuffle(&options, &options+6);
+    
+    findWinner(user,comp);
+    return 0;
+}
